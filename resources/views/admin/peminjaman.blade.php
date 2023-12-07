@@ -138,7 +138,7 @@
             <table class="min-w-full bg-white rounded-lg overflow-hidden shadow-lg mt-4">
                 <thead class="bg-slate-500 text-slate-200">
                     <tr>
-                        <th class="text-center py-3 px-4 uppercase font-medium text-sm">Id.</th>
+                        <th class="text-center py-3 px-4 uppercase font-medium text-sm">No.</th>
                         <th class="text-center py-3 px-4 uppercase font-medium text-sm">Nama</th>
                         <th class="text-center py-3 px-4 uppercase font-medium text-sm">Instansi</th>
                         <th class="text-center py-3 px-4 uppercase font-medium text-sm">No Telp</th>

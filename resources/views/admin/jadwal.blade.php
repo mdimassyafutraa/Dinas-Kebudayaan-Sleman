@@ -50,7 +50,7 @@
 
             var calendarEl = document.getElementById('calendar');
             var calendar = new FullCalendar.Calendar(calendarEl, {
-                locale: 'id', // Set bahasa menjadi bahasa Indonesia
+                locale: 'id',
                 initialView: 'dayGridMonth',
                 buttonText: {
                     today: 'Hari Ini'
@@ -62,21 +62,44 @@
                     var acaraEndEl = document.querySelector('.acara-end');
                     var acaraInstansiEl = document.querySelector('.acara-instansi');
 
-                    var mulai = formatter.format(new Date(info.event.start));
-                    var selesai = formatter.format(new Date(info.event.end));
+                    if (info.event) {
+                        var mulai = formatter.format(new Date(info.event.start));
+                        var selesai = formatter.format(new Date(info.event.end));
 
-                    acaraTitleEl.textContent = info.event.title;
-                    acaraStartEl.textContent = mulai;
-                    acaraEndEl.textContent = selesai;
-                    acaraInstansiEl.textContent = info.event.extendedProps.instansi;
+                        acaraTitleEl.textContent = info.event.title;
+                        acaraStartEl.textContent = mulai;
+                        acaraEndEl.textContent = selesai;
+                        acaraInstansiEl.textContent = info.event.extendedProps.instansi;
+                    } else {
+                        acaraTitleEl.textContent = 'Data tanggal ini kosong';
+                        acaraStartEl.textContent = '';
+                        acaraEndEl.textContent = '';
+                        acaraInstansiEl.textContent = '';
+                    }
                 },
-                eventMouseEnter: function(info) {
-                    info.el.style.backgroundColor = '#3498db';
-                    info.el.style.cursor = 'pointer';
+                datesSet: function() {
+                    var acaraTitleEl = document.querySelector('.acara-title');
+                    var acaraStartEl = document.querySelector('.acara-start');
+                    var acaraEndEl = document.querySelector('.acara-end');
+                    var acaraInstansiEl = document.querySelector('.acara-instansi');
+
+                    acaraTitleEl.textContent = 'Pilih tanggal untuk melihat acara';
+                    acaraStartEl.textContent = '';
+                    acaraEndEl.textContent = '';
+                    acaraInstansiEl.textContent = '';
                 },
-                eventMouseLeave: function(info) {
-                    info.el.style.backgroundColor = '';
-                },
+                dateClick: function(info) {
+                    var acaraTitleEl = document.querySelector('.acara-title');
+                    var acaraStartEl = document.querySelector('.acara-start');
+                    var acaraEndEl = document.querySelector('.acara-end');
+                    var acaraInstansiEl = document.querySelector('.acara-instansi');
+
+                    acaraTitleEl.textContent = 'Data tanggal ini kosong';
+                    acaraStartEl.textContent = '';
+                    acaraEndEl.textContent = '';
+                    acaraInstansiEl.textContent = '';
+                }
+
             });
             calendar.render();
         });

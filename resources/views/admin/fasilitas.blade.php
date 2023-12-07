@@ -34,15 +34,6 @@
                             @csrf
                             <div class="mb-4">
                                 <label class="block text-gray-700 text-sm font-bold mb-2" for="judul">
-                                    Judul
-                                </label>
-                                <input
-                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                    id="judul" type="text" placeholder="Tambahkan judul foto" name="judul"
-                                    required>
-                            </div>
-                            <div class="mb-4">
-                                <label class="block text-gray-700 text-sm font-bold mb-2" for="judul">
                                     Foto
                                 </label>
                                 <input
@@ -50,13 +41,17 @@
                                     id="foto" type="file" name="foto" required>
                             </div>
                             <div class="mb-4">
-                                <label class="block text-gray-700 text-sm font-bold mb-2" for="kategori">
-                                    Kategori
-                                </label>
-                                <input
-                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                                    id="kategori" type="text" placeholder="Parkiran, Gedung, Toilet...." name="kategori"
-                                    required>
+                                <label for="kategori" class="block text-gray-700 text-sm font-bold mb-2"></label>
+                                <select name="kategori"
+                                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+                                    <option disabled selected>Pilih kategori</option>
+                                    <option value="panggung">Panggung</option>
+                                    <option value="ruang_ganti">Ruang Ganti</option>
+                                    <option value="ruang_tunggu">Ruang Tunggu</option>
+                                    <option value="gudang">Gudang</option>
+                                    <option value="halaman_parkir">Halaman Parkir</option>
+                                    <option value="toilet">Toilet</option>
+                                </select>
                             </div>
                             <div class="mb-4">
                                 <label class="block text-gray-700 text-sm font-bold mb-2" for="keterangan">
@@ -90,7 +85,6 @@
                     <thead class="bg-slate-500 text-white">
                         <tr>
                             <th class="text-center py-3 px-4 uppercase font-medium text-sm">No.</th>
-                            <th class="text-center py-3 px-4 uppercase font-medium text-sm">Judul</th>
                             <th class="text-center py-3 px-4 uppercase font-medium text-sm">Foto</th>
                             <th class="text-center py-3 px-4 uppercase font-medium text-sm">Kategori</th>
                             <th class="text-center py-3 px-4 uppercase font-medium text-sm">Keterangan</th>
@@ -101,7 +95,6 @@
                         @foreach ($fasilitas as $fasilitasItem)
                             <tr class="text-center text-sm">
                                 <td class="py-3 px-4 ">{{ $itemNumber++ }}</td>
-                                <td class="py-3 px-4 ">{{ $fasilitasItem->judul }}</td>
                                 <td class="text-center py-3 px-4">
                                     <a href="{{ asset('img/fasilitas/' . $fasilitasItem->foto) }}">
                                         <img src="{{ asset('img/fasilitas/' . $fasilitasItem->foto) }}" width="200"

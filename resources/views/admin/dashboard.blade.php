@@ -75,7 +75,7 @@
             <table class="min-w-full bg-white rounded-lg overflow-hidden shadow-lg mt-4">
                 <thead class="bg-slate-500 text-white">
                     <tr>
-                        <th class="text-center py-3 px-4 uppercase font-medium text-sm">Id.</th>
+                        {{-- <th class="text-center py-3 px-4 uppercase font-medium text-sm">Id.</th> --}}
                         <th class="text-center py-3 px-4 uppercase font-medium text-sm">Nama</th>
                         <th class="text-center py-3 px-4 uppercase font-medium text-sm">Instansi</th>
                         <th class="text-center py-3 px-4 uppercase font-medium text-sm">No Telp</th>
@@ -93,7 +93,7 @@
                 <tbody class="text-gray-700">
                     @foreach ($peminjamanBelumDisetujuiDanHariIni as $peminjamss)
                         <tr class="text-center text-sm">
-                            <td class="text-center py-3 px-4">{{ $itemNumber++ }}</td>
+                            {{-- <td class="text-center py-3 px-4">{{ $itemNumber++ }}</td> --}}
                             <td class="text-center py-3 px-4">{{ $peminjamss->nama }}</td>
                             <td class="text-center py-3 px-4">{{ $peminjamss->instansi }}</td>
                             <td class="text-center py-3 px-4">{{ $peminjamss->no_telp }}</td>

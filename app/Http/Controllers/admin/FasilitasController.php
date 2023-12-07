@@ -34,7 +34,6 @@ class FasilitasController extends Controller
     function store(Request $request)
     {
         $fasilitas = new Fasilitas();
-        $fasilitas->judul = $request['judul'];
         $fasilitas->kategori = $request['kategori'];
         $fasilitas->keterangan = $request['keterangan'];
 

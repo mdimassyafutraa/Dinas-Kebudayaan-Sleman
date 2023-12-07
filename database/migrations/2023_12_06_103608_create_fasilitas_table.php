@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('fasilitas', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
             $table->string('foto');
-            $table->string('kategori');
+            $table->enum('kategori', ['panggung', 'ruang_ganti', 'ruang_tunggu', 'gudang', 'halaman_parkir', 'toilet']);
             $table->text('keterangan')->nullable();
             $table->timestamps();
         });

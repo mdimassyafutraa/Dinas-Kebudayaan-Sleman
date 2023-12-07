@@ -228,16 +228,16 @@
         {{-- Fasilitas --}}
         <section id="fasilitas" class="py-10 min-h-screen "
             style="background-image: url('{{ asset('img/bg-white.jpg') }}'); background-size: cover; background-position: center;">
-            <div class="w-full flex
-            justify-center lg:py-10 pb-10" data-aos="zoom-in-up"
-                data-aos-duration="1000">
+            <div class="w-full flex justify-center lg:py-10 pb-10" data-aos="zoom-in-up" data-aos-duration="1000">
                 <h1 class="font-medium md:text-xl lg:text-2xl xl:text-3xl  text-slate-500 uppercase">Fasilitas</h1>
             </div>
-            {{-- Galery --}}
-            <div class="flex  items-center justify-center">
+            {{-- Panggung --}}
+            <div class="w-full flex justify-center lg:py-10 pb-10" data-aos="zoom-in-up" data-aos-duration="1000">
+                <h1 class="font-medium md:text-base lg:text-lg xl:text-xl  text-slate-500 uppercase">Panggung</h1>
+            </div>
+            <div class="flex  items-center justify-center mt-10">
                 <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-                    {{-- foto --}}
-                    @foreach ($fasilitas as $item)
+                    @foreach ($fasilitas->where('kategori', 'panggung') as $item)
                         <div class="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-3xl"
                             data-aos="zoom-in-up" data-aos-duration="1000">
                             <div class="h-96 w-72">
@@ -264,6 +264,172 @@
                     @endforeach
                 </div>
             </div>
+            {{-- Ruang Ganti --}}
+            <div class="w-full flex justify-center lg:py-10 pb-10" data-aos="zoom-in-up" data-aos-duration="1000">
+                <h1 class="font-medium md:text-base lg:text-lg xl:text-xl  text-slate-500 uppercase">Ruang Ganti</h1>
+            </div>
+            <div class="flex  items-center justify-center mt-10">
+                <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+                    @foreach ($fasilitas->where('kategori', 'ruang_ganti') as $item)
+                        <div class="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-3xl"
+                            data-aos="zoom-in-up" data-aos-duration="1000">
+                            <div class="h-96 w-72">
+                                <img class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
+                                    src="{{ asset('img/fasilitas/' . $item->foto) }}" alt="" />
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70">
+                                <h1 class=" text-3xl font-bold text-white text-center mt-4">{{ $item->judul }}</h1>
+                            </div>
+                            <div
+                                class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+                                <p
+                                    class="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                                    {{ $item->keterangan }}
+                                </p>
+                                <a href="{{ asset('img/fasilitas/' . $item->foto) }}">
+                                    <button
+                                        class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60">Lihat
+                                        full</button>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+            {{-- Ruang Tunggu --}}
+            <div class="w-full flex justify-center lg:py-10 pb-10" data-aos="zoom-in-up" data-aos-duration="1000">
+                <h1 class="font-medium md:text-base lg:text-lg xl:text-xl  text-slate-500 uppercase">Ruang Tunggu</h1>
+            </div>
+            <div class="flex  items-center justify-center mt-10">
+                <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+                    @foreach ($fasilitas->where('kategori', 'ruang_tunggu') as $item)
+                        <div class="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-3xl"
+                            data-aos="zoom-in-up" data-aos-duration="1000">
+                            <div class="h-96 w-72">
+                                <img class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
+                                    src="{{ asset('img/fasilitas/' . $item->foto) }}" alt="" />
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70">
+                                <h1 class=" text-3xl font-bold text-white text-center mt-4">{{ $item->judul }}</h1>
+                            </div>
+                            <div
+                                class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+                                <p
+                                    class="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                                    {{ $item->keterangan }}
+                                </p>
+                                <a href="{{ asset('img/fasilitas/' . $item->foto) }}">
+                                    <button
+                                        class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60">Lihat
+                                        full</button>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+            {{-- Gudang --}}
+            <div class="w-full flex justify-center lg:py-10 pb-10" data-aos="zoom-in-up" data-aos-duration="1000">
+                <h1 class="font-medium md:text-base lg:text-lg xl:text-xl  text-slate-500 uppercase">Gudang</h1>
+            </div>
+            <div class="flex  items-center justify-center mt-10">
+                <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+                    @foreach ($fasilitas->where('kategori', 'gudang') as $item)
+                        <div class="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-3xl"
+                            data-aos="zoom-in-up" data-aos-duration="1000">
+                            <div class="h-96 w-72">
+                                <img class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
+                                    src="{{ asset('img/fasilitas/' . $item->foto) }}" alt="" />
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70">
+                                <h1 class=" text-3xl font-bold text-white text-center mt-4">{{ $item->judul }}</h1>
+                            </div>
+                            <div
+                                class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+                                <p
+                                    class="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                                    {{ $item->keterangan }}
+                                </p>
+                                <a href="{{ asset('img/fasilitas/' . $item->foto) }}">
+                                    <button
+                                        class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60">Lihat
+                                        full</button>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+            {{-- Halaman Parkir --}}
+            <div class="w-full flex justify-center lg:py-10 pb-10" data-aos="zoom-in-up" data-aos-duration="1000">
+                <h1 class="font-medium md:text-base lg:text-lg xl:text-xl  text-slate-500 uppercase">Halaman Parkir</h1>
+            </div>
+            <div class="flex  items-center justify-center">
+                <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+                    @foreach ($fasilitas->where('kategori', 'halaman_parkir') as $item)
+                        <div class="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-3xl"
+                            data-aos="zoom-in-up" data-aos-duration="1000">
+                            <div class="h-96 w-72">
+                                <img class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
+                                    src="{{ asset('img/fasilitas/' . $item->foto) }}" alt="" />
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70">
+                                <h1 class=" text-3xl font-bold text-white text-center mt-4">{{ $item->judul }}</h1>
+                            </div>
+                            <div
+                                class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+                                <p
+                                    class="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                                    {{ $item->keterangan }}
+                                </p>
+                                <a href="{{ asset('img/fasilitas/' . $item->foto) }}">
+                                    <button
+                                        class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60">Lihat
+                                        full</button>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+            {{-- Toilet --}}
+            <div class="w-full flex justify-center lg:py-10 pb-10" data-aos="zoom-in-up" data-aos-duration="1000">
+                <h1 class="font-medium md:text-base lg:text-lg xl:text-xl  text-slate-500 uppercase">Toilet</h1>
+            </div>
+            <div class="flex  items-center justify-center">
+                <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+                    @foreach ($fasilitas->where('kategori', 'toilet') as $item)
+                        <div class="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-3xl"
+                            data-aos="zoom-in-up" data-aos-duration="1000">
+                            <div class="h-96 w-72">
+                                <img class="h-full w-full object-cover transition-transform duration-500 group-hover:rotate-3 group-hover:scale-125"
+                                    src="{{ asset('img/fasilitas/' . $item->foto) }}" alt="" />
+                            </div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black group-hover:from-black/70 group-hover:via-black/60 group-hover:to-black/70">
+                                <h1 class=" text-3xl font-bold text-white text-center mt-4">{{ $item->judul }}</h1>
+                            </div>
+                            <div
+                                class="absolute inset-0 flex translate-y-[60%] flex-col items-center justify-center px-9 text-center transition-all duration-500 group-hover:translate-y-0">
+                                <p
+                                    class="mb-3 text-lg italic text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                                    {{ $item->keterangan }}
+                                </p>
+                                <a href="{{ asset('img/fasilitas/' . $item->foto) }}">
+                                    <button
+                                        class="rounded-full bg-neutral-900 py-2 px-3.5 font-com text-sm capitalize text-white shadow shadow-black/60">Lihat
+                                        full</button>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+
         </section>
 
         {{-- Pelayanan & Peraturan --}}
@@ -422,7 +588,7 @@
 
             var calendarEl = document.getElementById('calendar');
             var calendar = new FullCalendar.Calendar(calendarEl, {
-                locale: 'id', // Set bahasa menjadi bahasa Indonesia
+                locale: 'id',
                 initialView: 'dayGridMonth',
                 buttonText: {
                     today: 'Hari Ini'
@@ -434,21 +600,43 @@
                     var acaraEndEl = document.querySelector('.acara-end');
                     var acaraInstansiEl = document.querySelector('.acara-instansi');
 
-                    var mulai = formatter.format(new Date(info.event.start));
-                    var selesai = formatter.format(new Date(info.event.end));
+                    if (info.event) {
+                        var mulai = formatter.format(new Date(info.event.start));
+                        var selesai = formatter.format(new Date(info.event.end));
 
-                    acaraTitleEl.textContent = info.event.title;
-                    acaraStartEl.textContent = mulai;
-                    acaraEndEl.textContent = selesai;
-                    acaraInstansiEl.textContent = info.event.extendedProps.instansi;
+                        acaraTitleEl.textContent = info.event.title;
+                        acaraStartEl.textContent = mulai;
+                        acaraEndEl.textContent = selesai;
+                        acaraInstansiEl.textContent = info.event.extendedProps.instansi;
+                    } else {
+                        acaraTitleEl.textContent = 'Data tanggal ini kosong';
+                        acaraStartEl.textContent = '';
+                        acaraEndEl.textContent = '';
+                        acaraInstansiEl.textContent = '';
+                    }
                 },
-                eventMouseEnter: function(info) {
-                    info.el.style.backgroundColor = '#3498db';
-                    info.el.style.cursor = 'pointer';
+                datesSet: function() {
+                    var acaraTitleEl = document.querySelector('.acara-title');
+                    var acaraStartEl = document.querySelector('.acara-start');
+                    var acaraEndEl = document.querySelector('.acara-end');
+                    var acaraInstansiEl = document.querySelector('.acara-instansi');
+
+                    acaraTitleEl.textContent = 'Pilih tanggal untuk melihat acara';
+                    acaraStartEl.textContent = '';
+                    acaraEndEl.textContent = '';
+                    acaraInstansiEl.textContent = '';
                 },
-                eventMouseLeave: function(info) {
-                    info.el.style.backgroundColor = '';
-                },
+                dateClick: function(info) {
+                    var acaraTitleEl = document.querySelector('.acara-title');
+                    var acaraStartEl = document.querySelector('.acara-start');
+                    var acaraEndEl = document.querySelector('.acara-end');
+                    var acaraInstansiEl = document.querySelector('.acara-instansi');
+
+                    acaraTitleEl.textContent = 'Data tanggal ini kosong';
+                    acaraStartEl.textContent = '';
+                    acaraEndEl.textContent = '';
+                    acaraInstansiEl.textContent = '';
+                }
             });
             calendar.render();
         });
