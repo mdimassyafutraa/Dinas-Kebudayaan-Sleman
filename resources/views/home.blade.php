@@ -588,6 +588,7 @@
             });
 
             var calendarEl = document.getElementById('calendar');
+            var lastClickedDate = null;
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 locale: 'id',
                 initialView: 'dayGridMonth',
@@ -600,7 +601,6 @@
                     var acaraStartEl = document.querySelector('.acara-start');
                     var acaraEndEl = document.querySelector('.acara-end');
                     var acaraInstansiEl = document.querySelector('.acara-instansi');
-
                     if (info.event) {
                         var mulai = formatter.format(new Date(info.event.start));
                         var selesai = formatter.format(new Date(info.event.end));
@@ -637,6 +637,20 @@
                     acaraStartEl.textContent = '';
                     acaraEndEl.textContent = '';
                     acaraInstansiEl.textContent = '';
+
+                    if (lastClickedDate && lastClickedDate !== info.dayEl) {
+                        lastClickedDate.style.backgroundColor =
+                            '';
+                    }
+                    info.dayEl.style.backgroundColor = 'blue';
+                    lastClickedDate = info.dayEl;
+                },
+            });
+            document.body.addEventListener('click', function(event) {
+                var isClickInsideCalendar = calendarEl.contains(event.target);
+                if (!isClickInsideCalendar && lastClickedDate) {
+                    lastClickedDate.style.backgroundColor = '';
+                    lastClickedDate = null;
                 }
             });
             calendar.render();
