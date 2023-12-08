@@ -232,12 +232,12 @@
                 <h1 class="font-medium md:text-xl lg:text-2xl xl:text-3xl  text-slate-500 uppercase">Fasilitas</h1>
             </div>
             {{-- Panggung --}}
-            <div class="w-full flex justify-center lg:py-10 pb-10" data-aos="zoom-in-up" data-aos-duration="1000">
-                <h1 class="font-medium md:text-base lg:text-lg xl:text-xl  text-slate-500 uppercase">Panggung</h1>
-            </div>
-            <div class="flex  items-center justify-center mt-10">
-                <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-                    @foreach ($fasilitas->where('kategori', 'panggung') as $item)
+            @foreach ($fasilitas->where('kategori', 'panggung') as $item)
+                <div class="w-full flex justify-center lg:py-10 pb-10" data-aos="zoom-in-up" data-aos-duration="1000">
+                    <h1 class="font-medium md:text-base lg:text-lg xl:text-xl  text-slate-500 uppercase">Panggung</h1>
+                </div>
+                <div class="flex  items-center justify-center mt-10">
+                    <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
                         <div class="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-3xl"
                             data-aos="zoom-in-up" data-aos-duration="1000">
                             <div class="h-96 w-72">
@@ -261,16 +261,16 @@
                                 </a>
                             </div>
                         </div>
-                    @endforeach
+                    </div>
                 </div>
-            </div>
+            @endforeach
             {{-- Ruang Ganti --}}
-            <div class="w-full flex justify-center lg:py-10 pb-10" data-aos="zoom-in-up" data-aos-duration="1000">
-                <h1 class="font-medium md:text-base lg:text-lg xl:text-xl  text-slate-500 uppercase">Ruang Ganti</h1>
-            </div>
-            <div class="flex  items-center justify-center mt-10">
-                <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-                    @foreach ($fasilitas->where('kategori', 'ruang_ganti') as $item)
+            @foreach ($fasilitas->where('kategori', 'ruang_ganti') as $item)
+                <div class="w-full flex justify-center lg:py-10 pb-10" data-aos="zoom-in-up" data-aos-duration="1000">
+                    <h1 class="font-medium md:text-base lg:text-lg xl:text-xl  text-slate-500 uppercase">Ruang Ganti</h1>
+                </div>
+                <div class="flex  items-center justify-center mt-10">
+                    <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
                         <div class="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-3xl"
                             data-aos="zoom-in-up" data-aos-duration="1000">
                             <div class="h-96 w-72">
@@ -294,16 +294,16 @@
                                 </a>
                             </div>
                         </div>
-                    @endforeach
+                    </div>
                 </div>
-            </div>
+            @endforeach
             {{-- Ruang Tunggu --}}
-            <div class="w-full flex justify-center lg:py-10 pb-10" data-aos="zoom-in-up" data-aos-duration="1000">
-                <h1 class="font-medium md:text-base lg:text-lg xl:text-xl  text-slate-500 uppercase">Ruang Tunggu</h1>
-            </div>
-            <div class="flex  items-center justify-center mt-10">
-                <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-                    @foreach ($fasilitas->where('kategori', 'ruang_tunggu') as $item)
+            @foreach ($fasilitas->where('kategori', 'ruang_tunggu') as $item)
+                <div class="w-full flex justify-center lg:py-10 pb-10" data-aos="zoom-in-up" data-aos-duration="1000">
+                    <h1 class="font-medium md:text-base lg:text-lg xl:text-xl  text-slate-500 uppercase">Ruang Tunggu</h1>
+                </div>
+                <div class="flex  items-center justify-center mt-10">
+                    <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
                         <div class="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-3xl"
                             data-aos="zoom-in-up" data-aos-duration="1000">
                             <div class="h-96 w-72">
@@ -327,16 +327,16 @@
                                 </a>
                             </div>
                         </div>
-                    @endforeach
+                    </div>
                 </div>
-            </div>
+            @endforeach
             {{-- Gudang --}}
-            <div class="w-full flex justify-center lg:py-10 pb-10" data-aos="zoom-in-up" data-aos-duration="1000">
-                <h1 class="font-medium md:text-base lg:text-lg xl:text-xl  text-slate-500 uppercase">Gudang</h1>
-            </div>
-            <div class="flex  items-center justify-center mt-10">
-                <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-                    @foreach ($fasilitas->where('kategori', 'gudang') as $item)
+            @foreach ($fasilitas->where('kategori', 'gudang') as $item)
+                <div class="w-full flex justify-center lg:py-10 pb-10" data-aos="zoom-in-up" data-aos-duration="1000">
+                    <h1 class="font-medium md:text-base lg:text-lg xl:text-xl  text-slate-500 uppercase">Gudang</h1>
+                </div>
+                <div class="flex  items-center justify-center mt-10">
+                    <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
                         <div class="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-3xl"
                             data-aos="zoom-in-up" data-aos-duration="1000">
                             <div class="h-96 w-72">
@@ -360,16 +360,17 @@
                                 </a>
                             </div>
                         </div>
-                    @endforeach
+                    </div>
                 </div>
-            </div>
+            @endforeach
             {{-- Halaman Parkir --}}
-            <div class="w-full flex justify-center lg:py-10 pb-10" data-aos="zoom-in-up" data-aos-duration="1000">
-                <h1 class="font-medium md:text-base lg:text-lg xl:text-xl  text-slate-500 uppercase">Halaman Parkir</h1>
-            </div>
-            <div class="flex  items-center justify-center">
-                <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-                    @foreach ($fasilitas->where('kategori', 'halaman_parkir') as $item)
+            @foreach ($fasilitas->where('kategori', 'halaman_parkir') as $item)
+                <div class="w-full flex justify-center lg:py-10 pb-10" data-aos="zoom-in-up" data-aos-duration="1000">
+                    <h1 class="font-medium md:text-base lg:text-lg xl:text-xl  text-slate-500 uppercase">Halaman Parkir
+                    </h1>
+                </div>
+                <div class="flex  items-center justify-center">
+                    <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
                         <div class="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-3xl"
                             data-aos="zoom-in-up" data-aos-duration="1000">
                             <div class="h-96 w-72">
@@ -393,16 +394,16 @@
                                 </a>
                             </div>
                         </div>
-                    @endforeach
+                    </div>
                 </div>
-            </div>
+            @endforeach
             {{-- Toilet --}}
-            <div class="w-full flex justify-center lg:py-10 pb-10" data-aos="zoom-in-up" data-aos-duration="1000">
-                <h1 class="font-medium md:text-base lg:text-lg xl:text-xl  text-slate-500 uppercase">Toilet</h1>
-            </div>
-            <div class="flex  items-center justify-center">
-                <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-                    @foreach ($fasilitas->where('kategori', 'toilet') as $item)
+            @foreach ($fasilitas->where('kategori', 'toilet') as $item)
+                <div class="w-full flex justify-center lg:py-10 pb-10" data-aos="zoom-in-up" data-aos-duration="1000">
+                    <h1 class="font-medium md:text-base lg:text-lg xl:text-xl  text-slate-500 uppercase">Toilet</h1>
+                </div>
+                <div class="flex  items-center justify-center">
+                    <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
                         <div class="group relative cursor-pointer items-center justify-center overflow-hidden transition-shadow hover:shadow-xl hover:shadow-black/30 rounded-3xl"
                             data-aos="zoom-in-up" data-aos-duration="1000">
                             <div class="h-96 w-72">
@@ -426,9 +427,9 @@
                                 </a>
                             </div>
                         </div>
-                    @endforeach
+                    </div>
                 </div>
-            </div>
+            @endforeach
 
         </section>
 
